@@ -7,20 +7,20 @@ import Collapse from '../components/Collapse';
 import Mark from '../components/Mark/Mark';
 import Host from '../components/Host/Host';
 import Carousel from '../components/Carousel/Carousel';
-import apiLink from '../service/apiClass';
+import dataService from '../service/apiClass';
 
 
-const Accomodation = () => {  
+const Accommodation = () => {
 
   let [currentElement, setCurrentElement] = useState(null);
   let [haveCorrectId, setHaveCorrectId] = useState(null);
   const { refNumber } = useParams();
   const navigate = useNavigate();
-  
-  const fetchData = async () => {
+
+  const fetchDataById = async () => {
     try{
-      const dataToDisplay = await apiLink.init();
-      setCurrentElement(apiLink.getAccById(dataToDisplay, refNumber));
+      const dataToDisplay = await dataService.init();
+      setCurrentElement(dataService.getAccById(dataToDisplay, refNumber));
       setHaveCorrectId(true);
     }
     catch(error){
@@ -28,17 +28,20 @@ const Accomodation = () => {
     }
   }
 
-  useEffect(()=>{
-    fetchData();
+  useEffect(() => {
+    async function getData() {
+      return await fetchDataById();
+    }
+    getData();
   }, []);
-  
+
   useEffect( () => {
     if(currentElement === undefined){
       navigate('/error');
     }
   }, [haveCorrectId])
-  
-  
+
+
   return currentElement && (
     <>
     <Carousel pictures={currentElement.pictures}/>
@@ -61,8 +64,8 @@ const Accomodation = () => {
         <Collapse className='information__collapse' title='Description' textContent={currentElement.description}/>
         <Collapse title='Équipements' textContent={currentElement.equipments.map((current, index) => <span key={`${index}-${current}`}>{current}</span>)}/>
     </div>
-    </> 
+    </>
   )
 }
 
-export default Accomodation;
+export default Accommodation;

@@ -2,7 +2,7 @@ import './styles/index.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/index';
 import Home from './pages/Home';
-import Accomodation from  './pages/Accomodation';
+import Accommodation from './pages/Accommodation';
 import About from './pages/About';
 import WrongPage from './pages/WrongPage';
 import Footer from './components/Footer/index';
@@ -16,7 +16,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/accomodation/:refNumber' element={<Accomodation />}/>
+        <Route path='/accomodation/:refNumber' element={<Accommodation />}/>
         <Route path='/about' element={<About />}/>
         <Route path='/error' element={<WrongPage />}/>
         <Route path='*' element={<WrongPage />}/>

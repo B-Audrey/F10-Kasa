@@ -1,4 +1,4 @@
-class Api {
+class dataServiceClass {
 
     async init() {
         let response = await fetch('../data.json');
@@ -6,12 +6,10 @@ class Api {
     }
 
     getAccById (data, idToFind){
-        const valueToFind = data.find((element) => element.id === idToFind);
-        console.log(valueToFind);
-        return valueToFind;
+       return data.find((element) => element.id === idToFind);
     }
 }
 
-const apiLink = new Api();
+const dataService = new dataServiceClass();
 
-export default apiLink;
+export default dataService;
