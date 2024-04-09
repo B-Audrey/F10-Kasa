@@ -1,0 +1,70 @@
+@import './styles.scss';
+
+.accomodation__presentation{
+    @include flex-height-center;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 4%;
+    @media(min-width:700px){
+        align-items: stretch;
+        flex-direction: row;
+    }
+}
+
+.accomodation__titleBlock{
+    width: 100%;
+    @media(min-width:700px){
+        width:70%;
+        }
+}
+.accomodation__hostBlock{
+    @include flex-height-center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 2%;
+    @media(min-width:700px){
+        margin-top: 0;
+        width: 30%;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+}
+.title, .location {
+    color: $main-color;
+    font-weight: 500;
+    margin: 0;
+
+}
+.title{
+    font-size: 1.5em;
+    padding: 2% 0;
+    @media(min-width:700px){
+        font-size: 2.5em;
+        padding: 0;
+    }
+}
+.location {
+    font-size: 1em;
+    color: $black-color;
+    @media(min-width:700px){
+        font-size: 1.2em;
+    }
+}
+.tags{
+    @include flex-height-center;
+    column-gap: 2%;
+    padding: 0;
+    flex-wrap: wrap;
+    margin: 1% 0 0 0;
+}
+
+.informations{
+    margin-top: 5%;
+    @media(min-width:700px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5%;
+    }
+}

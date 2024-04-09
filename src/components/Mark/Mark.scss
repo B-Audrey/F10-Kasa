@@ -1,0 +1,18 @@
+@import '../../styles/styles.scss';
+
+.mark{
+    @include flex-height-center;
+    width: 65%;
+    gap: 3%;
+    @media(min-width:700px){
+        width: 100%;
+        justify-content: flex-end;
+    }
+    & *{
+        height: 13px;
+        @media (min-width: 700px) {
+            height: 24px;
+        }
+    }
+    
+}

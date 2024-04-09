@@ -1,0 +1,38 @@
+a {
+  color: #FF6060;
+  text-decoration: none;
+}
+
+.error {
+  color: #FF6060;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  height: 60vh;
+  box-sizing: border-box;
+  margin-top: 5%;
+}
+.error__code {
+  margin: auto;
+  font-size: 6em;
+  font-weight: 700;
+}
+@media (min-width: 700px) {
+  .error__code {
+    font-size: 8em;
+  }
+}
+@media (min-width: 1000px) {
+  .error__code {
+    font-size: 10em;
+  }
+}
+.error__text {
+  font-size: 1.5em;
+  text-align: center;
+}
+.error__link {
+  font-size: 1em;
+  text-decoration: underline;
+}/*# sourceMappingURL=Error.css.map */

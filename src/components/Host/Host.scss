@@ -1,0 +1,36 @@
+@import '../../styles/styles.scss';
+
+.host{
+    @include flex-height-center;
+    justify-content: flex-end;
+    width: 50%;
+    @media(min-width:700px){
+        width: 100%;
+    }
+    &__name{
+        font-size: 0.8em;
+        color: $main-color;
+        width: 60px;
+        text-align: right;
+        margin: 0;
+        line-height: 16px;
+        @media(min-width:700px){
+            line-height: 24px;
+            font-weight: 500;
+            font-size: 1.2em;
+            width: 80px;
+        }
+    }
+    &__img{
+        margin-left: 10px;
+        box-sizing: border-box;
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        object-fit: cover;
+        @media(min-width:700px){
+            width: 64px;
+            height: 64px;
+        }
+    }
+}

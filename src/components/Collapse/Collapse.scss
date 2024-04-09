@@ -1,0 +1,90 @@
+@import '../../styles/styles.scss';
+
+.collapse {
+    &__banner{
+        @include flex-height-center;
+        margin-top:2% ;
+        border-radius: 10px;
+        box-sizing: border-box;
+        color: $text-color;
+        height: 30px;
+        padding: 2%;
+        justify-content: space-between;
+        background-color: $main-color;
+        @media(min-width:700px){
+            height: 52px;
+        }
+    }
+    &__title{
+        font-weight: 700;
+        margin: 2%;
+        font-size: 0.8em;
+        @media(min-width:700px){
+            font-size: 1.2em;
+        }
+    }
+    &__content{
+        box-sizing: border-box;
+        width: 100%;
+        background-color: $block-background-color;
+        color: $black-color;
+        border-radius: 0 0 10px 10px;
+        padding-top: 15px;
+        position: relative;
+        top: -20px;
+        z-index: -1;
+    }
+    &__content--open{
+        max-height: 500px;
+        transition: max-height 500ms;
+        transform-origin: top;
+        overflow: hidden;
+    }
+    &__content--close{
+        transform-origin: top;
+        max-height: 0;
+        transition: max-height 500ms;
+        overflow: hidden;
+    }
+    &__content--text{
+        font-size: 0.8em;
+        margin: auto;
+        width: 95%;
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        @media(min-width:700px){
+            font-size: 1em;
+        }
+    }
+    &__content--text--open{
+        transform: translateY(0%);
+        transform-origin: top;
+        transition: transform 500ms;
+    }
+    &__content--text--close{
+        transform: translateY(-100%);
+        transform-origin: top;
+        transition: transform 500ms ;
+        overflow: hidden;
+    }
+    &__img{
+        width: 16px;
+        @media(min-width:700px){
+            width: 24px;
+        }
+    }
+    &__chevron {
+        transition: transform 300ms ease-in;
+        transform: rotate(0deg);
+        border: none;
+        background-color: $main-color;
+    }
+    &__chevron--open {
+        transition: transform 300ms ease-in;
+        transform: rotate(-180deg);
+        border: none;
+        background-color: $main-color;
+    }
+}

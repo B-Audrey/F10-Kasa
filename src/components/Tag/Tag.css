@@ -1,0 +1,19 @@
+a {
+  color: #FF6060;
+  text-decoration: none;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 84px;
+  background-color: #FF6060;
+  color: #FFFFFF;
+  font-size: 0.6em;
+  border-radius: 5px;
+  height: 18px;
+}
+.tag__text {
+  text-align: center;
+}/*# sourceMappingURL=Tag.css.map */

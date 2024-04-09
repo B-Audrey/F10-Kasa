@@ -1,0 +1,44 @@
+@import '../../styles/styles.scss';
+
+.header {
+    @include flex-height-center;
+    justify-content : space-between;
+    margin-top: 20px;
+    &__logoKasa{
+        width: 40%;
+        max-width: 210px;
+        height: auto
+    }
+    &__nav{
+        @include flex-height-center;
+        justify-content: flex-end;
+        width: 60%;
+        @media (min-width: 700px) {
+            width: 50%;
+        }
+        & *{
+            color: $black-color;
+            font-size:0.8em;
+            margin-left: 10%;
+            text-transform: uppercase;
+            text-decoration: none;
+            @media (min-width: 700px) {
+                text-transform: none;
+                margin-left: 20%;
+                font-size:1.2em;
+            }
+            @media (min-width: 1000px) {
+                margin-left: 25%;
+                font-size:1.5em;
+                font-weight: 500;
+            }
+        }
+        & *:hover{
+            text-decoration: underline;
+        }
+    }
+}
+.active{
+    text-decoration: underline;
+    color: $black-color;
+}

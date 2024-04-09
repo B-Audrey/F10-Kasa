@@ -1,0 +1,25 @@
+$main-color:#FF6060;
+$text-color:#FFFFFF;
+$block-background-color:#F7F7F7;
+$black-color:#000000;
+
+@mixin radius{
+    border-radius: 25px;
+}
+@mixin flex-height-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin center {
+    margin: auto;
+    justify-content: center;
+    width: 100%;
+}
+
+a {
+    color: $black-color;
+    text-decoration: none;
+}
+
+

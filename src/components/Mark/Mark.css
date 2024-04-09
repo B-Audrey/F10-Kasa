@@ -1,0 +1,17 @@
+a {
+  color: #FF6060;
+  text-decoration: none;
+}
+
+.mark {
+  display: flex;
+  align-items: center;
+}
+.mark * {
+  height: 13px;
+}
+@media (min-width: 1000px) {
+  .mark * {
+    height: 24px;
+  }
+}/*# sourceMappingURL=Mark.css.map */
