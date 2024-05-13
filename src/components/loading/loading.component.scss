@@ -1,0 +1,53 @@
+@import '../../styles/styles.scss';
+
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+  margin: 0;
+  background-color: white; //attache un fond blanc
+
+}
+
+.loader {
+  position: absolute; //supperpose tous les loaders
+}
+
+.loaderA {
+  width: 100px; //fait un carré
+  border-radius: 20%;
+  height: 100px;
+  border: 2px solid $main-color;
+  animation: turn 3s linear infinite;
+}
+
+.loaderB {
+  width: 100px;
+  height: 100px;
+  border: 3px solid $black-color;
+  animation: turn 1s linear infinite;
+  border-radius: 20%;
+
+}
+
+.loaderC {
+  width: 100px;
+  height: 100px;
+  border: 2px solid grey;
+  animation: turn 2s linear infinite;
+  border-radius: 20%;
+
+}
+
+//KEYFRAMES
+@keyframes turn {
+  0% {
+    transform: rotate(0deg); //part d'une rotation de 0%
+  }
+  100% {
+    transform: rotate(360deg); //fait un tour complet à 360 pour arriver à 100%
+  }
+}

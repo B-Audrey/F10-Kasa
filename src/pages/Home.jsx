@@ -1,36 +1,30 @@
 import Banner from '../components/Banner';
 import img from '../assets/bannerImg.png';
 import Gallery from '../components/Gallery/index';
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
-import dataService from '../service/apiClass';
+import useFetch from '../service/useFetch';
+import Loading from '../components/loading/loading.component';
 
 const Home = () => {
     const navigate = useNavigate();
-    let [data, setData] = useState({});
-    let [haveData, setHaveData] = useState(false);
+    const {data, isLoading} = useFetch();
 
-    const fetchData = async () => {
-        try {
-            const dataToDisplay = await dataService.init();
-            setData(dataToDisplay);
-            setHaveData(true);
-        } catch (error) {
-            navigate('/error');
-        }
-    }
 
     useEffect(() => {
-        async function getData() {
-            return await fetchData();
+        if (!data?.length && !isLoading) {
+            navigate('/error');
         }
-        getData();
-    }, []);
+    }, [data]);
+
+    if (isLoading) {
+        return <><Loading/></>
+    }
 
     return (
         <>
             <Banner img={img} text/>
-            {haveData ? <Gallery data={data}/> : null}
+            {!isLoading ? <Gallery data={data}/> : <h1>Loading...</h1>}
         </>
     );
 }
