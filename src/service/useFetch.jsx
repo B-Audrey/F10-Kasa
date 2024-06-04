@@ -14,8 +14,7 @@ export default function useFetch(id) {
     }
 
     async function fetchAccommodationById(id) {
-        await fetchData(url);
-        if (data && id) {
+        if (id) {
             const accommodation = data.find(accommodation => accommodation.id === id);
             setAccommodationById(accommodation);
             setIsLoading(false);
@@ -23,10 +22,18 @@ export default function useFetch(id) {
     }
 
     useEffect(() => {
+        fetchData(url)
+    }, []);
+
+    useEffect(() => {
         if (id) {
-            fetchAccommodationById(id)
-        } else {
-            fetchData(url)
+            fetchData(url);
+        }
+    }, [id])
+
+    useEffect(() => {
+        if(data) {
+            fetchAccommodationById(id);
         }
     }, [data]);
 
